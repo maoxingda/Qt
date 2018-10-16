@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>../../../../Documents/Qt/untitled55/anchor.jpg</file>
+        <file>anchor1.jpg</file>
+        <file>anchor2.jpg</file>
     </qresource>
 </RCC>

@@ -15,7 +15,7 @@ void CrcImgWdg::paintEvent(QPaintEvent *event)
 
     painter.setRenderHints(QPainter::Antialiasing);
 
-    QPixmap pixmap("C:/Users/Administrator/Documents/Qt/untitled55/anchor.jpg");
+    QPixmap pixmap(":/anchor2.jpg");
 
     QPainterPath path;
 
