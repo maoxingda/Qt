@@ -19,47 +19,38 @@ void CrcImgWdg::setPixmap(QString imgPathOuter, QString imgPathInner, int radius
 }
 
 
+void CrcImgWdg::drawCircle(QRect rc, const QPixmap &pm)
+{
+	QPainterPath path;
+    QPainter painter(this);
+
+    path.addEllipse(rc);
+    painter.setClipPath(path);
+	painter.setRenderHints(QPainter::Antialiasing);
+
+    painter.drawPixmap(rc, pm);
+}
+
 void CrcImgWdg::paintEvent(QPaintEvent *event)
 {
     Q_ASSERT(!m_pixmapOuter.isNull() || !m_pixmapInner.isNull());
 
     if (m_pixmapOuter.isNull() || m_pixmapInner.isNull())
     {
-        QWidget::paintEvent(event);
-
-        return;
+        return QWidget::paintEvent(event);
     }
 
     QRect rcWdgOuter = event->rect();
-    QRect rcWdgInner(rcWdgOuter.left() + m_nRadius, rcWdgOuter.top() + m_nRadius, rcWdgOuter.width() - 2 * m_nRadius, rcWdgOuter.height() - 2 * m_nRadius);
+    QRect rcWdgInner(rcWdgOuter.left() + m_nRadius, rcWdgOuter.top() + m_nRadius
+		, rcWdgOuter.width() - 2 * m_nRadius, rcWdgOuter.height() - 2 * m_nRadius);
 
     {
         // Draw outer circle
-        QPainter painter(this);
-
-        painter.setRenderHints(QPainter::Antialiasing);
-
-        QPainterPath path;
-
-        path.addEllipse(rcWdgOuter);
-
-        painter.setClipPath(path);
-
-        painter.drawPixmap(rcWdgOuter, m_pixmapOuter);
+        drawCircle(rcWdgOuter, m_pixmapOuter);
     }
 
     {
         // Draw inner circle
-        QPainter painter(this);
-
-        painter.setRenderHints(QPainter::Antialiasing);
-
-        QPainterPath path;
-
-        path.addEllipse(rcWdgInner);
-
-        painter.setClipPath(path);
-
-        painter.drawPixmap(rcWdgInner, m_pixmapInner);
+		drawCircle(rcWdgInner, m_pixmapInner);
     }
 }

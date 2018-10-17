@@ -6,18 +6,18 @@
 class CrcImgWdg : public QWidget
 {
     Q_OBJECT
+
 public:
     explicit CrcImgWdg(QWidget *parent = nullptr);
-
-signals:
-
-public slots:
 
 public:
     void setPixmap(QString imgPathOuter, QString imgPathInner, int radius = 3);
 
 private:
-    int m_nRadius;
+	void drawCircle(QRect rc, const QPixmap &pm);
+
+private:
+    int		m_nRadius;
     QPixmap m_pixmapOuter;
     QPixmap m_pixmapInner;
 
