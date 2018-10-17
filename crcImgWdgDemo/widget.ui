@@ -96,11 +96,25 @@
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButtonDec">
-         <property name="text">
-          <string>dec</string>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="topMargin">
+          <number>0</number>
          </property>
-        </widget>
+         <item>
+          <widget class="QPushButton" name="pushButtonAdd">
+           <property name="text">
+            <string>add</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonDec">
+           <property name="text">
+            <string>dec</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>

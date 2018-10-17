@@ -20,3 +20,10 @@ void Widget::on_pushButtonDec_clicked()
 
     ui->widgetCrcImg->setFixedSize(rcWdg.width() - 5, rcWdg.height() - 5);
 }
+
+void Widget::on_pushButtonAdd_clicked()
+{
+    QRect rcWdg = ui->widgetCrcImg->rect();
+
+    ui->widgetCrcImg->setFixedSize(rcWdg.width() + 5, rcWdg.height() + 5);
+}
