@@ -13,6 +13,12 @@ signals:
 
 public slots:
 
+public:
+    void setPixmap(QString imgPath);
+
+private:
+    QPixmap m_pixmap;
+
     // QWidget interface
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
