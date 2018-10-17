@@ -14,10 +14,12 @@ signals:
 public slots:
 
 public:
-    void setPixmap(QString imgPath);
+    void setPixmap(QString imgPathOuter, QString imgPathInner, int radius = 3);
 
 private:
-    QPixmap m_pixmap;
+    int m_nRadius;
+    QPixmap m_pixmapOuter;
+    QPixmap m_pixmapInner;
 
     // QWidget interface
 protected:

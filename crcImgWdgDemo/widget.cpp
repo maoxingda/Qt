@@ -6,7 +6,7 @@ Widget::Widget(QWidget *parent) :
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    ui->widgetCrcImg->setPixmap(":/anchor1.jpg");
+    ui->widgetCrcImg->setPixmap(":/anchor1.jpg", ":/anchor2.jpg");
 }
 
 Widget::~Widget()

@@ -5,38 +5,61 @@
 
 CrcImgWdg::CrcImgWdg(QWidget *parent)
     : QWidget(parent)
+    , m_nRadius(3)
 {
 
 }
 
-void CrcImgWdg::setPixmap(QString imgPath)
+void CrcImgWdg::setPixmap(QString imgPathOuter, QString imgPathInner, int radius/* = 3*/)
 {
-    Q_ASSERT(!imgPath.isEmpty());
+    Q_ASSERT(!imgPathOuter.isEmpty() && !imgPathInner.isEmpty() && 0 < radius);
 
-    m_pixmap.load(imgPath);
+    m_pixmapOuter.load(imgPathOuter);
+    m_pixmapInner.load(imgPathInner);
 }
 
 
 void CrcImgWdg::paintEvent(QPaintEvent *event)
 {
-    Q_ASSERT(!m_pixmap.isNull());
+    Q_ASSERT(!m_pixmapOuter.isNull() || !m_pixmapInner.isNull());
 
-    if (m_pixmap.isNull())
+    if (m_pixmapOuter.isNull() || m_pixmapInner.isNull())
     {
         QWidget::paintEvent(event);
+
+        return;
     }
 
-    QPainter painter(this);
+    QRect rcWdgOuter = event->rect();
+    QRect rcWdgInner(rcWdgOuter.left() + m_nRadius, rcWdgOuter.top() + m_nRadius, rcWdgOuter.width() - 2 * m_nRadius, rcWdgOuter.height() - 2 * m_nRadius);
 
-    painter.setRenderHints(QPainter::Antialiasing);
+    {
+        // Draw outer circle
+        QPainter painter(this);
 
-    QPainterPath path;
+        painter.setRenderHints(QPainter::Antialiasing);
 
-    QRect rcWdg = event->rect();
+        QPainterPath path;
 
-    path.addEllipse(rcWdg);
+        path.addEllipse(rcWdgOuter);
 
-    painter.setClipPath(path);
+        painter.setClipPath(path);
 
-    painter.drawPixmap(rcWdg, m_pixmap);
+        painter.drawPixmap(rcWdgOuter, m_pixmapOuter);
+    }
+
+    {
+        // Draw inner circle
+        QPainter painter(this);
+
+        painter.setRenderHints(QPainter::Antialiasing);
+
+        QPainterPath path;
+
+        path.addEllipse(rcWdgInner);
+
+        painter.setClipPath(path);
+
+        painter.drawPixmap(rcWdgInner, m_pixmapInner);
+    }
 }
