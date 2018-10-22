@@ -4,6 +4,7 @@
 #include <QFile>
 #include <QNetworkReply>
 #include <QThread>
+#include <QUrlQuery>
 #include <json/reader.h>
 #include <json/value.h>
 
@@ -12,10 +13,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    m_pNAMgr = new QNetworkAccessManager(this);
     ui->textBrowser->setWordWrapMode(QTextOption::NoWrap);
-    ui->lineEditUrl->setText("http://base.api.qxiu.com/cgi/attention/like?anchorId=%I64d&userId=%I64d&openid=%s&openkey=%s&uid=%I64d&mcheck=%s&accessToken=%s&roomId=%I64d");
+    ui->lineEditUrl->setText("http://cgi.tiantian.qq.com/tiantian/accusation");
     showMaximized();
-    connect(&m_NAMgr, SIGNAL(finished(QNetworkReply*)), SLOT(replyFinished(QNetworkReply*)));
+    connect(m_pNAMgr, SIGNAL(finished(QNetworkReply*)), SLOT(replyFinished(QNetworkReply*)));
 }
 
 MainWindow::~MainWindow()
@@ -42,7 +44,7 @@ void MainWindow::replyFinished(QNetworkReply *aReply)
 
 void MainWindow::on_pushButtonGet_clicked()
 {
-    m_NAMgr.get(QNetworkRequest(QUrl(ui->lineEditUrl->text())));
+    m_pNAMgr->get(QNetworkRequest(QUrl(ui->lineEditUrl->text())));
 }
 
 void MainWindow::on_pushButtonClr_clicked()

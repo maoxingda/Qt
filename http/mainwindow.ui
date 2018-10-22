@@ -30,7 +30,10 @@
         <item row="0" column="0">
          <widget class="QLabel" name="labelUrl">
           <property name="text">
-           <string>url</string>
+           <string>ur&amp;l</string>
+          </property>
+          <property name="buddy">
+           <cstring>lineEditUrl</cstring>
           </property>
          </widget>
         </item>
@@ -61,6 +64,12 @@
          <widget class="QPushButton" name="pushButtonGet">
           <property name="text">
            <string>get</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="default">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
