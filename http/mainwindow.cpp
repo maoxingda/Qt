@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     m_pNAMgr = new QNetworkAccessManager(this);
     ui->textBrowser->setWordWrapMode(QTextOption::NoWrap);
-    ui->lineEditUrl->setText("http://cgi.tiantian.qq.com/tiantian/accusation");
+    ui->lineEditUrl->setText("http://hot.active.qxiu.com/happyPk/match/anchorRank");
     showMaximized();
     connect(m_pNAMgr, SIGNAL(finished(QNetworkReply*)), SLOT(replyFinished(QNetworkReply*)));
 }
@@ -44,10 +44,18 @@ void MainWindow::replyFinished(QNetworkReply *aReply)
 
 void MainWindow::on_pushButtonGet_clicked()
 {
-    m_pNAMgr->get(QNetworkRequest(QUrl(ui->lineEditUrl->text())));
+    QUrlQuery query;
+    query.addQueryItem("anchorId", "439851");
+    query.addQueryItem("roomId", "225088");
+    m_pNAMgr->get(QNetworkRequest(QUrl(ui->lineEditUrl->text() + "?" + query.toString())));
 }
 
 void MainWindow::on_pushButtonClr_clicked()
 {
     ui->textBrowser->clear();
+}
+
+void MainWindow::on_pushButtonCls_clicked()
+{
+    close();
 }

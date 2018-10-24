@@ -23,6 +23,8 @@ private slots:
 
     void on_pushButtonClr_clicked();
 
+    void on_pushButtonCls_clicked();
+
 private:
     Ui::MainWindow *ui;
     QNetworkAccessManager* m_pNAMgr;
