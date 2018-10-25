@@ -27,6 +27,9 @@
         <property name="horizontalSpacing">
          <number>10</number>
         </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
         <item row="0" column="0">
          <widget class="QLabel" name="labelUrl">
           <property name="text">
@@ -39,6 +42,19 @@
         </item>
         <item row="0" column="1">
          <widget class="QLineEdit" name="lineEditUrl"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="labelSel">
+          <property name="text">
+           <string>sel</string>
+          </property>
+          <property name="buddy">
+           <cstring>lineEditUrl</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="comboBoxUrl"/>
         </item>
        </layout>
       </item>

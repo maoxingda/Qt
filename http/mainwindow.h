@@ -25,6 +25,8 @@ private slots:
 
     void on_pushButtonCls_clicked();
 
+    void on_comboBoxUrl_currentTextChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     QNetworkAccessManager* m_pNAMgr;
