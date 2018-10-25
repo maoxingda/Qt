@@ -18,8 +18,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEditUrl->setText("http://127.0.0.1:18580/happyPk/match/anchorRank");
     showMaximized();
     connect(m_pNAMgr, SIGNAL(finished(QNetworkReply*)), SLOT(replyFinished(QNetworkReply*)));
+    ui->comboBoxUrl->addItem("http://127.0.0.1:18580/hero/rank/hero");
     ui->comboBoxUrl->addItem("http://127.0.0.1:18580/happyPk/match/anchorRank?anchorId=367566&roomId=200066");
-    ui->comboBoxUrl->addItem("http://127.0.0.1:18580/happyPk/match/anchorRank?anchorId=445216&roomId=223666");
+    ui->labelUrl->hide();
+    ui->lineEditUrl->hide();
 }
 
 MainWindow::~MainWindow()
