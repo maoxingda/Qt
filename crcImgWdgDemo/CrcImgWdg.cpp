@@ -3,7 +3,7 @@
 #include <QPaintEvent>
 #include <QPainter>
 
-CrcImgWdg::CrcImgWdg(QWidget *parent)
+CrcImgWdg::CrcImgWdg(QWidget *parent/* = nullptr*/)
     : QWidget(parent)
     , m_nRadius(3)
 {
