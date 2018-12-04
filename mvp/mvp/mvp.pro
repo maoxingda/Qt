@@ -19,10 +19,12 @@ UI_DIR += ./GeneratedFiles
 RCC_DIR += ./GeneratedFiles
 HEADERS += ./CStudent.h \
     ./mvp.h \
-    ./CStudentTableModel.h
+    ./CStudentTableModel.h \
+    ./CStudentDelegate.h
 SOURCES += ./CStudent.cpp \
     ./CStudentTableModel.cpp \
     ./main.cpp \
-    ./mvp.cpp
+    ./mvp.cpp \
+    ./CStudentDelegate.cpp
 FORMS += ./mvp.ui
 RESOURCES += mvp.qrc

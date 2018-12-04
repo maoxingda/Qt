@@ -22,6 +22,7 @@ CStudentTableModel::CStudentTableModel(QObject *parent)
 	//	m_vectStudent.push_back(stu2);
 	//	m_vectStudent.push_back(stu3);
 	//}
+	//std::sort(m_vectStudent.begin(), m_vectStudent.end());
 }
 
 CStudentTableModel::~CStudentTableModel()

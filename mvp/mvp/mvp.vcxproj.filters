@@ -62,6 +62,15 @@
     <ClCompile Include="CStudent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CStudentDelegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_CStudentDelegate.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_CStudentDelegate.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="mvp.h">
@@ -74,6 +83,9 @@
       <Filter>Resource Files</Filter>
     </CustomBuild>
     <CustomBuild Include="CStudentTableModel.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CStudentDelegate.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>

@@ -1,4 +1,5 @@
 #include "mvp.h"
+#include <vld.h>
 #include <QtGui/QApplication>
 
 int main(int argc, char *argv[])

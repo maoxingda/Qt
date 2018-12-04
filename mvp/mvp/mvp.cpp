@@ -1,16 +1,18 @@
 #include "mvp.h"
 #include "CStudentTableModel.h"
-
+#include "CStudentDelegate.h"
 #include <QCheckBox>
 #include <QLabel>
 #include <QPushButton>
 #include <QLineEdit>
+
 
 mvp::mvp(QWidget *parent, Qt::WFlags flags)
 	: QWidget(parent, flags)
 {
 	ui.setupUi(this);
 	ui.tableView->setModel(new CStudentTableModel(ui.tableView));
+	ui.tableView->setItemDelegate(new CStudentDelegate(ui.tableView));
 	ui.tableView->verticalHeader()->setHidden(true);
     ui.tableView->horizontalHeader()->setHidden(true);
 	ui.tableView->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
