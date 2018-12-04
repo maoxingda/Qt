@@ -41,7 +41,7 @@ void CStudentDelegate::setModelData(QWidget *editor, QAbstractItemModel *model, 
 
 	if (nullptr != pLineEditor)
 	{
-		model->setData(index, QVariant(pLineEditor->text()));
+		model->setData(index, pLineEditor->text());
 	}
 }
 

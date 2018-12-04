@@ -98,17 +98,17 @@ QVariant CStudentTableModel::data(const QModelIndex &index, int role) const
 
 	if (Qt::TextAlignmentRole == role)
 	{
-		return QVariant(Qt::AlignLeft);
+		return Qt::AlignLeft;
 	}
     else if (Qt::DisplayRole == role || Qt::EditRole == role || Qt::ToolTipRole == role)
 	{
 		if (0 == index.column())
 		{
-			return QVariant(m_vectStudent[index.row()].name);
+			return m_vectStudent[index.row()].name;
 		}
 		else if (1 == index.column())
 		{
-			return QVariant(m_vectStudent[index.row()].phoneNumber);
+			return m_vectStudent[index.row()].phoneNumber;
 		}
 	}
     else if (Qt::DecorationRole == role)
@@ -130,7 +130,7 @@ QVariant CStudentTableModel::headerData(int section, Qt::Orientation orientation
 {
 	//if (Qt::TextAlignmentRole == role)
 	//{
-	//	return QVariant(Qt::AlignLeft);
+	//	return Qt::AlignLeft;
 	//}
 
 	if (Qt::DisplayRole != role || Qt::Vertical == orientation)
@@ -140,17 +140,17 @@ QVariant CStudentTableModel::headerData(int section, Qt::Orientation orientation
 
 	//if (Qt::Vertical == orientation)
 	//{
-	//	return QVariant(QString::number(section + 1));
+	//	return QString::number(section + 1);
 	//}
 
 	switch (section)
 	{
 	case 0:
-		return QVariant(QString::fromLocal8Bit("姓名"));
+		return QString::fromLocal8Bit("姓名");
 		break;
 
 	case 1:
-		return QVariant(QString::fromLocal8Bit("电话"));
+		return QString::fromLocal8Bit("电话");
 		break;
 
 	default:
