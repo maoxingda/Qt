@@ -1,5 +1,6 @@
 #include "CStudentTableModel.h"
 #include "CStudent.h"
+#include <QIcon>
 #include <algorithm>
 
 CStudentTableModel::CStudentTableModel(QObject *parent)
@@ -99,7 +100,7 @@ QVariant CStudentTableModel::data(const QModelIndex &index, int role) const
 	{
 		return QVariant(Qt::AlignCenter);
 	}
-	else if (Qt::DisplayRole == role || Qt::EditRole == role)
+    else if (Qt::DisplayRole == role || Qt::EditRole == role || Qt::ToolTipRole == role)
 	{
 		if (0 == index.column())
 		{
@@ -110,6 +111,10 @@ QVariant CStudentTableModel::data(const QModelIndex &index, int role) const
 			return QVariant(m_vectStudent[index.row()].phoneNumber);
 		}
 	}
+    else if (Qt::DecorationRole == role)
+    {
+        return QIcon(":/skins/ico/ringtones.ico");
+    }
 
 	return QVariant();
 }

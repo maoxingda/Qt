@@ -5,7 +5,7 @@
 
 class CStudentDelegate : public QStyledItemDelegate
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
 	CStudentDelegate(QObject *parent = nullptr);

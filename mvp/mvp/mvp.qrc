@@ -1,4 +1,6 @@
 <RCC>
-    <qresource prefix="mvp">
+    <qresource prefix="/mvp"/>
+    <qresource prefix="/">
+        <file>skins/ico/ringtones.ico</file>
     </qresource>
 </RCC>
