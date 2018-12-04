@@ -2,5 +2,6 @@
     <qresource prefix="/mvp"/>
     <qresource prefix="/">
         <file>skins/ico/ringtones.ico</file>
+        <file>skins/png/phone.png</file>
     </qresource>
 </RCC>

@@ -9,3 +9,5 @@ CStudent::~CStudent()
 {
 
 }
+
+int CStudent::sortFlag = 1;

@@ -22,7 +22,7 @@ CStudentTableModel::CStudentTableModel(QObject *parent)
 	//	m_vectStudent.push_back(stu1);
 	//	m_vectStudent.push_back(stu2);
 	//	m_vectStudent.push_back(stu3);
-	//}
+    //}
 	//std::sort(m_vectStudent.begin(), m_vectStudent.end());
 }
 
@@ -113,7 +113,14 @@ QVariant CStudentTableModel::data(const QModelIndex &index, int role) const
 	}
     else if (Qt::DecorationRole == role)
     {
-        return QIcon(":/skins/ico/ringtones.ico");
+		if (0 == index.column())
+		{
+			return QIcon(":/skins/ico/ringtones.ico");
+		}
+		else if (1 == index.column())
+		{
+			return QIcon(":/skins/png/phone.png");
+		}
     }
 
 	return QVariant();
@@ -193,4 +200,28 @@ bool CStudentTableModel::removeRows(int row, int count, const QModelIndex &paren
 	endRemoveRows();
 
 	return true;
+}
+
+
+void CStudentTableModel::sort(int column, Qt::SortOrder order)
+{
+    if (0 == column)
+    {
+		CStudent::sortFlag = 1;
+    }
+    else if (1 == column)
+    {
+		CStudent::sortFlag = 2;
+    }
+
+	if (Qt::AscendingOrder == order)
+	{
+		std::sort(m_vectStudent.begin(), m_vectStudent.end());
+	}
+	else if (Qt::DescendingOrder == order)
+	{
+		std::sort(m_vectStudent.rbegin(), m_vectStudent.rend());
+	}
+
+	emit dataChanged(index(0, 0), index(m_vectStudent.size() - 1, 1));
 }

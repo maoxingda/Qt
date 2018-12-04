@@ -30,6 +30,7 @@ protected:
     virtual bool setData(const QModelIndex &index, const QVariant &value, int role) override;
     virtual bool insertRows(int row, int count, const QModelIndex &parent) override;
     virtual bool removeRows(int row, int count, const QModelIndex &parent) override;
+    virtual void sort(int column, Qt::SortOrder order) override;
 
 private:
     std::vector<CStudent> m_vectStudent;

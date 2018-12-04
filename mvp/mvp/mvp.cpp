@@ -11,11 +11,13 @@ mvp::mvp(QWidget *parent, Qt::WFlags flags)
 	: QWidget(parent, flags)
 {
 	ui.setupUi(this);
+    ui.tableView->setSortingEnabled(true);
 	ui.tableView->setModel(new CStudentTableModel(ui.tableView));
 	ui.tableView->setItemDelegate(new CStudentDelegate(ui.tableView));
 	ui.tableView->verticalHeader()->setHidden(true);
-    ui.tableView->horizontalHeader()->setHidden(true);
-	ui.tableView->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+//    ui.tableView->horizontalHeader()->setHidden(true);
+//    ui.tableView->horizontalHeader()->setSortIndicatorShown(true);
+    ui.tableView->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
 }
 
 mvp::~mvp()
