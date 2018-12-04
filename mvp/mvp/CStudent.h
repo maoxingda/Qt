@@ -2,7 +2,6 @@
 #define CSTUDENT_H
 
 #include <QString>
-#include <QMetaType>
 
 class CStudent
 {
@@ -25,7 +24,5 @@ public:
 		return (this->name < other.name);
 	}
 };
-
-Q_DECLARE_METATYPE(CStudent)
 
 #endif // CSTUDENT_H
