@@ -17,4 +17,12 @@ MOC_DIR += ./GeneratedFiles/debug
 OBJECTS_DIR += debug
 UI_DIR += ./GeneratedFiles
 RCC_DIR += ./GeneratedFiles
-include(mvp.pri)
+HEADERS += ./CStudent.h \
+    ./mvp.h \
+    ./CStudentTableModel.h
+SOURCES += ./CStudent.cpp \
+    ./CStudentTableModel.cpp \
+    ./main.cpp \
+    ./mvp.cpp
+FORMS += ./mvp.ui
+RESOURCES += mvp.qrc
