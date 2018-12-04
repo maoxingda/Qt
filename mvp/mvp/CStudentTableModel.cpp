@@ -98,7 +98,7 @@ QVariant CStudentTableModel::data(const QModelIndex &index, int role) const
 
 	if (Qt::TextAlignmentRole == role)
 	{
-		return QVariant(Qt::AlignCenter);
+		return QVariant(Qt::AlignLeft);
 	}
     else if (Qt::DisplayRole == role || Qt::EditRole == role || Qt::ToolTipRole == role)
 	{
@@ -115,7 +115,7 @@ QVariant CStudentTableModel::data(const QModelIndex &index, int role) const
     {
 		if (0 == index.column())
 		{
-			return QIcon(":/skins/ico/ringtones.ico");
+			return QIcon(":/skins/png/system-users.png");
 		}
 		else if (1 == index.column())
 		{
@@ -128,6 +128,11 @@ QVariant CStudentTableModel::data(const QModelIndex &index, int role) const
 
 QVariant CStudentTableModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
+	//if (Qt::TextAlignmentRole == role)
+	//{
+	//	return QVariant(Qt::AlignLeft);
+	//}
+
 	if (Qt::DisplayRole != role || Qt::Vertical == orientation)
 	{
 		return QVariant();
