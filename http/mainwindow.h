@@ -27,6 +27,8 @@ private slots:
 
     void on_comboBoxUrl_currentTextChanged(const QString &arg1);
 
+    void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
+
 private:
     Ui::MainWindow *ui;
     QNetworkAccessManager* m_pNAMgr;

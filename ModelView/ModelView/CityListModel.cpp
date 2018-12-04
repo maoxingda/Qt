@@ -42,19 +42,19 @@ QVariant CityListModel::data(const QModelIndex &index, int role /*= Qt::DisplayR
 	return QVariant();
 }
 
-//bool CityListModel::setData(const QModelIndex &index, const QVariant &value, int role /*= Qt::EditRole*/)
-//{
-//	if (index.isValid() && role == Qt::EditRole)
-//	{
-//		m_vectCitys[index.row()] = value.toString();
-//
-//		emit dataChanged(index, index);
-//
-//		return true;
-//	}
-//
-//	return false;
-//}
+bool CityListModel::setData(const QModelIndex &index, const QVariant &value, int role /*= Qt::EditRole*/)
+{
+	if (index.isValid() && role == Qt::EditRole)
+	{
+		m_vectCitys[index.row()] = value.toString();
+
+		emit dataChanged(index, index);
+
+		return true;
+	}
+
+	return false;
+}
 
 bool CityListModel::insertRows(int row, int count, const QModelIndex &parent /*= QModelIndex() */)
 {
@@ -79,7 +79,7 @@ Qt::ItemFlags CityListModel::flags(const QModelIndex &index) const
 		return Qt::ItemIsEnabled;
 	}
 
-	return __super::flags(index)/* | Qt::ItemIsEditable*/;
+	return __super::flags(index) | Qt::ItemIsEditable;
 }
 
 void CityListModel::insertCity(QString city)
@@ -101,9 +101,8 @@ void CityListModel::removeCity()
 
 void CityListModel::removeAllCitys()
 {
-	//std::swap(m_vectCitys[0], m_vectCitys[2]);
-	//while (!m_vectCitys.empty())
-	//{
-	//	removeCity();
-	//}
+	while (!m_vectCitys.empty())
+	{
+		removeCity();
+	}
 }
