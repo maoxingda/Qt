@@ -27,14 +27,14 @@
        <property name="topMargin">
         <number>0</number>
        </property>
-       <item row="1" column="0">
+       <item row="0" column="0">
         <widget class="QLabel" name="labelName">
          <property name="text">
           <string>姓名</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
+       <item row="0" column="1">
         <widget class="QLineEdit" name="lineEditName">
          <property name="text">
           <string>毛兴达</string>
@@ -44,14 +44,14 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="1" column="0">
         <widget class="QLabel" name="labelPhoneNum">
          <property name="text">
           <string>联系方式</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
+       <item row="1" column="1">
         <widget class="QLineEdit" name="lineEditPhoneNum">
          <property name="text">
           <string>18001289144</string>
