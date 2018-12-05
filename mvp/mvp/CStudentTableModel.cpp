@@ -16,7 +16,7 @@ CStudentTableModel::CStudentTableModel(QObject *parent)
 	m_vectStudent.push_back(stu1);
 	m_vectStudent.push_back(stu2);
 	m_vectStudent.push_back(stu3);
-	std::sort(m_vectStudent.begin(), m_vectStudent.end());
+	std::sort(m_vectStudent.begin(), m_vectStudent.end(), CStudentCompare(CStudentCompare::SORT_BY_NAME));
 	//for (auto i = 0; i < 10000; ++i)
 	//{
 	//	m_vectStudent.push_back(stu1);
@@ -210,22 +210,13 @@ bool CStudentTableModel::removeRows(int row, int count, const QModelIndex &paren
 
 void CStudentTableModel::sort(int column, Qt::SortOrder order)
 {
-    if (0 == column)
-    {
-		CStudent::sortFlag = 1;
-    }
-    else if (1 == column)
-    {
-		CStudent::sortFlag = 2;
-    }
-
 	if (Qt::AscendingOrder == order)
 	{
-		std::sort(m_vectStudent.begin(), m_vectStudent.end());
+		std::sort(m_vectStudent.begin(), m_vectStudent.end(), CStudentCompare(CStudentCompare::SortFlag(column)));
 	}
 	else if (Qt::DescendingOrder == order)
 	{
-		std::sort(m_vectStudent.rbegin(), m_vectStudent.rend());
+		std::sort(m_vectStudent.rbegin(), m_vectStudent.rend(), CStudentCompare(CStudentCompare::SortFlag(column)));
 	}
 
 	emit dataChanged(index(0, 0), index(m_vectStudent.size() - 1, 1));
