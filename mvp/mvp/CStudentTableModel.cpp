@@ -98,7 +98,7 @@ QVariant CStudentTableModel::data(const QModelIndex &index, int role) const
 
 	if (Qt::TextAlignmentRole == role)
 	{
-		return Qt::AlignLeft;
+		return /*Qt::AlignLeft | */Qt::AlignCenter;
 	}
     else if (Qt::DisplayRole == role || Qt::EditRole == role || Qt::ToolTipRole == role)
 	{
@@ -115,7 +115,7 @@ QVariant CStudentTableModel::data(const QModelIndex &index, int role) const
     {
 		if (0 == index.column())
 		{
-			return QIcon(":/skins/png/system-users.png");
+			return QIcon(":/skins/png/user-32.png");
 		}
 		else if (1 == index.column())
 		{

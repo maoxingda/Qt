@@ -2,6 +2,6 @@
     <qresource prefix="/mvp"/>
     <qresource prefix="/">
         <file>skins/png/phone.png</file>
-        <file>skins/png/system-users.png</file>
+        <file>skins/png/user-32.png</file>
     </qresource>
 </RCC>
