@@ -17,7 +17,7 @@ mvp::mvp(QWidget *parent, Qt::WFlags flags)
 	ui.tableView->verticalHeader()->setHidden(true);
 //    ui.tableView->horizontalHeader()->setHidden(true);
 //    ui.tableView->horizontalHeader()->setSortIndicatorShown(true);
-    ui.tableView->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
+    ui.tableView->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
 }
 
 mvp::~mvp()
