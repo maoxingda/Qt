@@ -14,6 +14,8 @@ signals:
 public slots:
 	void slot1();
 	void slot2();
+	void on_obj2_signal1();
+	void on_obj2_signal2();
 };
 
 #endif // COBJECT2_H

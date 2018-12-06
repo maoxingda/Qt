@@ -7,7 +7,7 @@ class CObject1 : public QObject
 {
     Q_OBJECT
 public:
-    explicit CObject1(QObject *parent = nullptr);
+    Q_INVOKABLE explicit CObject1(QObject *parent = nullptr);
 
 signals:
 	void signal1();
