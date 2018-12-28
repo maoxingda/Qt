@@ -3,11 +3,31 @@
 
 CObject1::CObject1(QObject *parent) : QObject(parent)
 {
-	QTimer::singleShot(3000, this, SLOT(emitSignals()));
+	self = this;
+	//QTimer::singleShot(20, this, SLOT(emitSignals()));
+}
+
+CObject1* CObject1::self = nullptr;
+
+void CObject1::slot01()
+{
+
+}
+
+void CObject1::slot02()
+{
+
+}
+
+void CObject1::slot03()
+{
+
 }
 
 void CObject1::emitSignals()
 {
-	emit signal1();
-	emit signal2();
+	Student stu;
+	stu.name	= "maoxd";
+	stu.id		= 1;
+	emit signal01(stu);
 }

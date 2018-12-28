@@ -8,11 +8,9 @@ DESTDIR = ./debug
 QT += core qaxserver qaxcontainer
 CONFIG += debug console
 DEFINES += _CONSOLE QT_LARGEFILE_SUPPORT QT_DEPRECATED_WARNINGS QT_DLL QT_HAVE_MMX QT_HAVE_3DNOW QT_HAVE_SSE QT_HAVE_MMXEXT QT_HAVE_SSE2
-INCLUDEPATH += ../../../../../../$(QTDIR)/include/QtCore \
-    ../../../../../../$(QTDIR)/include \
-    ../../../../../../$(QTDIR)/include/ActiveQt \
-    ../../../../../../debug \
-    $(QTDIR)/mkspecs/default
+INCLUDEPATH += ./debug \
+    $(QTDIR)/mkspecs/default \
+    .
 PRECOMPILED_HEADER = 
 DEPENDPATH += .
 MOC_DIR += debug
@@ -20,7 +18,9 @@ OBJECTS_DIR += debug
 UI_DIR += ./GeneratedFiles
 RCC_DIR += ./GeneratedFiles
 HEADERS += ./CObject1.h \
-    ./CObject2.h
+    ./CObject2.h \
+    ./CObject3.h
 SOURCES += ./CObject1.cpp \
     ./CObject2.cpp \
+    ./CObject3.cpp \
     ./main.cpp

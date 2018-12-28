@@ -10,13 +10,13 @@ public:
 	CObject3(QObject *parent = nullptr);
 	~CObject3();
 
-signals:
+//signals:
 	void signal1();
 
 private:
-	Q_INVOKABLE void invokableMethod();
+	/*Q_INVOKABLE */void invokableMethod();
 	
-private slots:
+//private slots:
 	void slot1();
 };
 

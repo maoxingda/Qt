@@ -2,6 +2,7 @@
 #define COBJECT2_H
 
 #include <QObject>
+#include "CStudent.h"
 
 class CObject2 : public QObject
 {
@@ -10,12 +11,136 @@ public:
     explicit CObject2(QObject *parent = nullptr);
 
 signals:
+	void signal01();
+	void signal02();
+	void signal03();
+	void signal04();
+	void signal05();
+	void signal06();
+	void signal07();
+	void signal08();
+	void signal09();
+	void signal10();
+	void signal11();
+	void signal12();
+	void signal13();
+	void signal14();
+	void signal15();
+	void signal16();
+	void signal17();
+	void signal18();
+	void signal19();
+	void signal20();
+	void signal21();
+	void signal22();
+	void signal23();
+	void signal24();
+	void signal25();
+	void signal26();
+	void signal27();
+	void signal28();
+	void signal29();
+	void signal30();
+	void signal31();
+	void signal32();
+	void signal33();
+	void signal34();
+	void signal35();
+	void signal36();
+	void signal37();
+	void signal38();
+	void signal39();
+	void signal40();
+	void signal41();
+	void signal42();
+	void signal43();
+	void signal44();
+	void signal45();
+	void signal46();
+	void signal47();
+	void signal48();
+	void signal49();
+	void signal50();
+	void signal51();
+	void signal52();
+	void signal53();
+	void signal54();
+	void signal55();
+	void signal56();
+	void signal57();
+	void signal58();
+	void signal59();
+	void signal60();
+	void signal61();
+	void signal62();
+	void signal63();
+	void signal64();
 
 public slots:
-	void slot1();
-	void slot2();
-	void on_obj2_signal1();
-	void on_obj2_signal2();
+	void slot01(Student);
+	void slot02();
+	void slot03();
+	void slot04();
+	void slot05();
+	void slot06();
+	void slot07();
+	void slot08();
+	void slot09();
+	void slot10();
+	void slot11();
+	void slot12();
+	void slot13();
+	void slot14();
+	void slot15();
+	void slot16();
+	void slot17();
+	void slot18();
+	void slot19();
+	void slot20();
+	void slot21();
+	void slot22();
+	void slot23();
+	void slot24();
+	void slot25();
+	void slot26();
+	void slot27();
+	void slot28();
+	void slot29();
+	void slot30();
+	void slot31();
+	void slot32();
+	void slot33();
+	void slot34();
+	void slot35();
+	void slot36();
+	void slot37();
+	void slot38();
+	void slot39();
+	void slot40();
+	void slot41();
+	void slot42();
+	void slot43();
+	void slot44();
+	void slot45();
+	void slot46();
+	void slot47();
+	void slot48();
+	void slot49();
+	void slot50();
+	void slot51();
+	void slot52();
+	void slot53();
+	void slot54();
+	void slot55();
+	void slot56();
+	void slot57();
+	void slot58();
+	void slot59();
+	void slot60();
+	void slot61();
+	void slot62();
+	void slot63();
+	void slot64();
 };
 
 #endif // COBJECT2_H
