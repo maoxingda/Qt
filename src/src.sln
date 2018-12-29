@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "src", "src.vcxproj", "{B812B134-CDE9-3500-B330-DD12F91A2CE1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qtsrc", "..\..\..\..\..\..\..\..\Qt\4.8.3\src\qtsrc.vcxproj", "{7407CD4D-D625-EA05-469D-B268CB572B9E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,8 +13,6 @@ Global
 		{B812B134-CDE9-3500-B330-DD12F91A2CE1}.Debug|Win32.Build.0 = Debug|Win32
 		{B812B134-CDE9-3500-B330-DD12F91A2CE1}.Release|Win32.ActiveCfg = Release|Win32
 		{B812B134-CDE9-3500-B330-DD12F91A2CE1}.Release|Win32.Build.0 = Release|Win32
-		{7407CD4D-D625-EA05-469D-B268CB572B9E}.Debug|Win32.ActiveCfg = Debug|Win32
-		{7407CD4D-D625-EA05-469D-B268CB572B9E}.Release|Win32.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,25 +1,14 @@
 #include "CObject1.h"
 #include <QTimer>
 
+CObject1* CObject1::self = nullptr;
+
 CObject1::CObject1(QObject *parent) : QObject(parent)
 {
 	self = this;
-	//QTimer::singleShot(20, this, SLOT(emitSignals()));
 }
-
-CObject1* CObject1::self = nullptr;
 
 void CObject1::slot01()
-{
-
-}
-
-void CObject1::slot02()
-{
-
-}
-
-void CObject1::slot03()
 {
 
 }

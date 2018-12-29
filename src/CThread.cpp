@@ -16,5 +16,6 @@ CThread::~CThread()
 
 void CThread::run()
 {
+	new CObject1();
 	CObject1::self->emitSignals();
 }

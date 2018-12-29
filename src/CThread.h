@@ -11,8 +11,6 @@ public:
 	CThread(QObject *parent);
 	~CThread();
 
-private:
-	
 protected:
 	virtual void run();
 
